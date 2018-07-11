@@ -4,11 +4,11 @@ class AuthorsController < ApplicationController
   end
 
   def new
-    @author = Author.create
+    @author = Author.new
   end
 
   def create
-    @author = Author.create(author_params)
+    @author = Author.build(author_params)
 
     if @author.save
       redirect_to author_path(@author)
